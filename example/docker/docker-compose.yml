@@ -1,0 +1,31 @@
+version: "3.6"
+
+services:
+
+  self-hosted-sso-server:
+    image: soulteary/sso-server:1.0.0
+    container_name: sso-server
+    hostname: sso-server
+    restart: always
+    ports:
+      - 8080:80
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
+    command: ./main
+    environment:
+      - TZ=Asia/Shanghai
+      - PORT=${SERVER_LISTEN_PORT:-80}
+      - SESSION_SECRET=${SESSION_SECRET:-}
+      - SERVER_NAME=${SERVER_NAME:-}
+      - CLIENT_NAME=${CLIENT_NAME:-}
+      - CLIENT_ID=${CLIENT_ID:-}
+      - CLIENT_SECRET=${CLIENT_SECRET:-}
+      - CLIENT_ISTRUSTED=${CLIENT_ISTRUSTED:-}
+      - USER_PASS=${USER_PASS:-}
+      - LICENSE=${LICENSE:-}
+      - LICENSE_FILE=${LICENSE_FILE:-}
+    logging:
+        driver: "json-file"
+        options:
+            max-size: "10m"
