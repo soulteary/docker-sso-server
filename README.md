@@ -113,7 +113,7 @@ The default account:
 - username: `username`
 - password: `password`
 
-OTP verification will need to be reset as the service restarts, which further improves the security of the program.
+In order to further improve the security of the program, when the default service restarts, you need to scan the code again to set the OTP verification of the account. This default behavior allows you to change it by setting the fixed `OTP_OPTION`.
 
 ## Option: Outbound Restriction
 

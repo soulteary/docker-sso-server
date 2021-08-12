@@ -109,7 +109,7 @@ profileUrl         = 'http://host-name-or-ip/api/userinfo'
 - 用户名: `username`
 - 密码: `password`
 
-为了进一步提高程序的安全性，服务重启时需要重新扫码设置账户的 OTP 验证。
+为了进一步提高程序的安全性，默认服务重启时需要重新扫码设置账户的 OTP 验证。这个默认行为允许通设置固定的 `OTP_OPTION` 进行变更。
 
 ## 可选项：出站网络限制
 
