@@ -20,7 +20,7 @@ docker run -d --name=sso-server \
             -e CLIENT_ID="YOUR_OAUTH_CLIENT_ID" \
             -e CLIENT_SECRET="YOUR_OAUTH_CLIENT_SECRET" \
             -e USER_PASS="password" \
-            -p 3000:80 soulteary/sso-server:1.0.0
+            -p 3000:80 soulteary/sso-server:1.1.0
 ```
 
 服务启动之后，使用浏览器访问 `http://localhost:3000/login`，将可以看到登录界面。
@@ -94,6 +94,7 @@ profileUrl         = 'http://host-name-or-ip/api/userinfo'
 | CLIENT_NAME | 是 | `My CLIENT NAME` | `GENERAL SSO SERVER` | 仅用于页面或命令行信息显示。如果未设置，将尝试使用 `SERVER_NAME` 变量进行替代。 |
 | SERVER_NAME | 是 | `My SSO Server` | `SSO Server` | 仅用于页面或命令行信息显示 |
 | PORT | 是 | `8080` | `80` | docker中的程序监听端口 |
+| OTP_OPTION | Yes | `KEY:m9sEH4JP6C;PERIOD:30` | 空 | 用户指定的OTP参数，第一次绑定后，可以在用户页面获得 |
 | SESSION_SECRET | 是 | `iWoupoFYZ9Ud` | `RANDOM STRING()` | 仅用于页面或命令行信息显示 |
 | SERVER_DOMAIN | 是 | `sso.example.com` | 空 | 仅在 Traefik docker-compose.yml 文件中需要 |
 | LICENSE | 是 | `...(huge text)` | `PRESET_LICENSE_TEXT` | 用户许可协议的内容，和 `LICENSE_FILE` 二选一使用 |

@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## 1.1.0-2021.08.12
+
+-[New] Added OTP KEY persistent parameters, allowing users to use fixed OTP KEY as a verification method.
+-[New] Added Gitea SSO configuration example.
+-[Improvement] Simplify the program size and template rendering method, relying on module details.
+-[Fix] Fix the problem of OAuth authorization.
+
 ## 1.0.0-2021.08.11
 
 > Make the program run easier, only need to configure four parameters, you can experience the out-of-the-box SSO service.

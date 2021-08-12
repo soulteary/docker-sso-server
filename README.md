@@ -22,7 +22,7 @@ docker run -d --name=sso-server \
             -e CLIENT_ID="YOUR_OAUTH_CLIENT_ID" \
             -e CLIENT_SECRET="YOUR_OAUTH_CLIENT_SECRET" \
             -e USER_PASS="password" \
-            -p 3000:80 soulteary/sso-server:1.0.0
+            -p 3000:80 soulteary/sso-server:1.1.0
 ```
 
 Open `http://localhost:3000/login`, you will see the login screen.
@@ -98,6 +98,7 @@ In order to ensure that the program can run correctly, we need to define some va
 | CLIENT_NAME | YES | `My CLIENT NAME` | `GENERAL SSO SERVER` | Only used for page or command line information display. If not set, will try to use the `SERVER_NAME` variable. |
 | SERVER_NAME | Yes | `My SSO Server` | `SSO Server` | Only used for page or command line information display |
 | PORT | Yes | `8080` | `80` | Program listening port in the docker |
+| OTP_OPTION | Yes | `KEY:m9sEH4JP6C;PERIOD:30` | empty | The OTP parameters specified by the user can be obtained on the user page after the first binding |
 | SESSION_SECRET | Yes | `iWoupoFYZ9Ud` | `RANDOM STRING()` | Only used for page or command line information display |
 | SERVER_DOMAIN | Yes | `sso.example.com` | empty | Only required in Traefik docker-compose.yml file |
 | LICENSE | Yes | `...(huge text)` | `PRESET_LICENSE_TEXT` | The content of the user license agreement, and `LICENSE_FILE` can choose one to use |
