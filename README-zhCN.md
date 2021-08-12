@@ -67,6 +67,8 @@ profileUrl         = 'http://host-name-or-ip/api/userinfo'
 
 **如果数值与下表不符，请不要继续运行程序。**
 
+- 版本: **soulteary/sso-server:1.1.0**
+  - 指纹: `060d0706d05dabd66bbc94b858b4817651fc771139b3323018d9c1eeb1d9794c`
 - 版本: **soulteary/sso-server:1.0.0**
   - 指纹: `060d0706d05dabd66bbc94b858b48176079287862e8111f46ee08a00e80a130d`
 

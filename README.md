@@ -71,6 +71,8 @@ In order to ensure the safety of the program, when the program is started, a uni
 
 **If the value does not match the list below, please do not continue to run the program.**
 
+- Version: **soulteary/sso-server:1.1.0**
+  - Fingerprint: `060d0706d05dabd66bbc94b858b4817651fc771139b3323018d9c1eeb1d9794c`
 - Version: **soulteary/sso-server:1.0.0**
   - Fingerprint: `060d0706d05dabd66bbc94b858b48176079287862e8111f46ee08a00e80a130d`
 
