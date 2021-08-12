@@ -1,0 +1,54 @@
+version: "3.6"
+
+services:
+
+  self-hosted-sso-server:
+    image: soulteary/sso-server:1.1.1
+    container_name: sso-server
+    hostname: sso-server
+    restart: always
+    ports:
+      - 8080:80
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
+    command: ./main
+    environment:
+      - USER_PASS=${USER_PASS:-}
+      # The following configurations are optional
+      - TZ=Asia/Shanghai
+      - PORT=${SERVER_LISTEN_PORT:-80}
+      - SESSION_SECRET=${SESSION_SECRET:-}
+      # FOR CLIENT 1
+      - CLIENT_1_NAME=${CLIENT_1_NAME:-}
+      - CLIENT_1_ID=${CLIENT_1_ID:-}
+      - CLIENT_1_SECRET=${CLIENT_1_SECRET:-}
+      - CLIENT_1_ISTRUSTED=${CLIENT_1_ISTRUSTED:-}
+      # FOR CLIENT 2
+      - CLIENT_2_NAME=${CLIENT_2_NAME:-}
+      - CLIENT_2_ID=${CLIENT_2_ID:-}
+      - CLIENT_2_SECRET=${CLIENT_2_SECRET:-}
+      - CLIENT_2_ISTRUSTED=${CLIENT_2_ISTRUSTED:-}
+      # FOR CLIENT 3
+      - CLIENT_3_NAME=${CLIENT_3_NAME:-}
+      - CLIENT_3_ID=${CLIENT_3_ID:-}
+      - CLIENT_3_SECRET=${CLIENT_3_SECRET:-}
+      - CLIENT_3_ISTRUSTED=${CLIENT_3_ISTRUSTED:-}
+      # FOR CLIENT 4
+      - CLIENT_4_NAME=${CLIENT_4_NAME:-}
+      - CLIENT_4_ID=${CLIENT_4_ID:-}
+      - CLIENT_4_SECRET=${CLIENT_4_SECRET:-}
+      - CLIENT_4_ISTRUSTED=${CLIENT_4_ISTRUSTED:-}
+      # FOR CLIENT 5
+      - CLIENT_5_NAME=${CLIENT_5_NAME:-}
+      - CLIENT_5_ID=${CLIENT_5_ID:-}
+      - CLIENT_5_SECRET=${CLIENT_5_SECRET:-}
+      - CLIENT_5_ISTRUSTED=${CLIENT_5_ISTRUSTED:-}
+      - SERVER_NAME=${SERVER_NAME:-}
+      - LICENSE=${LICENSE:-}
+      - LICENSE_FILE=${LICENSE_FILE:-}
+      - OTP_OPTION=${OTP_OPTION:-}
+    logging:
+        driver: "json-file"
+        options:
+            max-size: "10m"
