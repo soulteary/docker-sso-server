@@ -111,6 +111,20 @@ In order to ensure that the program can run correctly, we need to define some va
 | LICENSE | Yes | `...(huge text)` | `PRESET_LICENSE_TEXT` | The content of the user license agreement, and `LICENSE_FILE` can choose one to use |
 | LICENSE_FILE | Yes | `/app/my.lic` | empty | The file path of the user license agreement file, and `LICENSE` can choose one to use |
 
+### Differentiate authorization for different applications
+
+If you need to set different authorization parameters for different applications, you can use a `CLIENT_*` series of parameters.
+
+| Environment variable | Optional | Example | Default | Note |
+| --- | --- | --- | --- | --- |
+| CLIENT_1_ID | YES | `YOUR_CLIENT_ID` | `SjVN7VhgOsku` | The function is the same as `CLIENT_ID`, which is specified separately for a certain application or a certain type of application |
+| CLIENT_1_SECRET | YES | `YOUR_CLIENT_SECRET` | `t3Qt89nv9u5O` | The function is the same as `CLIENT_SECRET`, which is specified separately for a certain application or a certain type of application |
+| CLIENT_1_ISTRUSTED | YES | `true` | `false` | The function is the same as `CLIENT_ISTRUSTED`, which is specified separately for a certain application or a certain type of application |
+| CLIENT_1_NAME | YES | `My CLIENT NAME` | `GENERAL SSO SERVER` | The function is the same as `CLIENT_NAME`, which is specified separately for a certain application or a certain type of application |
+
+The current program supports `1` to `5`, so we can define five different applications, which are enough for general scenarios.
+
+
 ## Example
 
 The docker example can be viewed [here](./example).

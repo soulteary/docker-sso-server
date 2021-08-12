@@ -107,6 +107,19 @@ profileUrl         = 'http://host-name-or-ip/api/userinfo'
 | LICENSE | 是 | `...(huge text)` | `PRESET_LICENSE_TEXT` | 用户许可协议的内容，和 `LICENSE_FILE` 二选一使用 |
 | LICENSE_FILE | 是 | `/app/my.lic` | 空 | 用户许可协议文件的文件路径，和 `LICENSE` 二选一使用 |
 
+### 针对不同应用进行授权区分
+
+如果你需要针对不同的应用设置不同的授权参数，则可以使用 `CLIENT_*` 系列参数。
+
+| 环境变化 | 是否可选 | 示例 | 默认值 | 说明 |
+| --- | --- | --- | --- | --- |
+| CLIENT_1_ID | 否 | `YOUR_CLIENT_ID` | `SjVN7VhgOsku` | 作用和 `CLIENT_ID` 一致，为某个应用或者某类应用单独指定 |
+| CLIENT_1_SECRET | 否 | `YOUR_CLIENT_SECRET` | `t3Qt89nv9u5O` | 作用和 `CLIENT_SECRET` 一致，为某个应用或者某类应用单独指定 |
+| CLIENT_1_ISTRUSTED | 是 | `true` | `false` | 作用和 `CLIENT_ISTRUSTED` 一致，为某个应用或者某类应用单独指定 |
+| CLIENT_1_NAME | 是 | `My CLIENT NAME` | `GENERAL SSO SERVER` | 作用和 `CLIENT_NAME` 一致，为某个应用或者某类应用单独指定 |
+
+目前程序支持 1 ～ 5，所以我们可以定义五个不同的应用，应该足够一般场景使用。
+
 ## 示例
 
 可以在[此处](./example)查看更多 docker 示例。

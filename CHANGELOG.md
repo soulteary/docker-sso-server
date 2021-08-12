@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.1.1-2021.08.12
+
+-[New] Added optional CLIENT1 to 5 configuration parameters, allowing different authorization parameters to connect to different applications.
+
 ## 1.1.0-2021.08.12
 
 -[New] Added OTP KEY persistent parameters, allowing users to use fixed OTP KEY as a verification method.
