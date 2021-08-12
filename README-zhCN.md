@@ -67,10 +67,15 @@ profileUrl         = 'http://host-name-or-ip/api/userinfo'
 
 **如果数值与下表不符，请不要继续运行程序。**
 
+- 版本: **soulteary/sso-server:1.1.1**
+  - 指纹: `060d0706d05dabd66bbc94b858b481765a08d4b79ffbc7d939a96db4f6a46d6b`
+    - Docker Image: `7c7fa08a707acc6999d1e25cf14d3dd00d397f747e8a9dcb22868707f849f7e4`
 - 版本: **soulteary/sso-server:1.1.0**
   - 指纹: `060d0706d05dabd66bbc94b858b4817651fc771139b3323018d9c1eeb1d9794c`
+  - Docker Image: `f093c6ab5e825767957c60dfc8f580c7e267e1b7c365062e58fb15a726442c6d`
 - 版本: **soulteary/sso-server:1.0.0**
   - 指纹: `060d0706d05dabd66bbc94b858b48176079287862e8111f46ee08a00e80a130d`
+  - Docker Image: `979fa1fc30364647e366c0d0448c38924ad7776a057fd8623ee87e5868941565`
 
 ## 当前支持登录模式
 
