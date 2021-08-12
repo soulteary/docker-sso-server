@@ -29,6 +29,7 @@ services:
       - USER_PASS=${USER_PASS:-}
       - LICENSE=${LICENSE:-}
       - LICENSE_FILE=${LICENSE_FILE:-}
+      - OTP_OPTION=${OTP_OPTION:-}
     labels:
       - "traefik.enable=true"
       - "traefik.docker.network=traefik"

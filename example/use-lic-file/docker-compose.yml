@@ -26,6 +26,7 @@ services:
       - USER_PASS=${USER_PASS:-}
       - LICENSE=${LICENSE:-}
       - LICENSE_FILE=${LICENSE_FILE:-}
+      - OTP_OPTION=${OTP_OPTION:-}
     logging:
         driver: "json-file"
         options:

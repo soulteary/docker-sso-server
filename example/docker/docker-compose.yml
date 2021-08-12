@@ -3,7 +3,7 @@ version: "3.6"
 services:
 
   self-hosted-sso-server:
-    image: soulteary/sso-server:1.0.0
+    image: soulteary/sso-server:1.1.0
     container_name: sso-server
     hostname: sso-server
     restart: always
@@ -25,6 +25,7 @@ services:
       - USER_PASS=${USER_PASS:-}
       - LICENSE=${LICENSE:-}
       - LICENSE_FILE=${LICENSE_FILE:-}
+      - OTP_OPTION=${OTP_OPTION:-}
     logging:
         driver: "json-file"
         options:
