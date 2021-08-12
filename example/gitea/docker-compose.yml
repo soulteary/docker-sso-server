@@ -1,0 +1,102 @@
+version: "3.6"
+
+services:
+
+  self-hosted-sso-server:
+    image: soulteary/sso-server:1.1.0
+    container_name: sso-server
+    restart: always
+    expose:
+      - 80
+    command: ./main
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
+    extra_hosts:
+      - "$SERVER_DOMAIN:0.0.0.0"
+    networks:
+      - traefik
+    environment:
+      - TZ=Asia/Shanghai
+      - PORT=${SERVER_LISTEN_PORT:-80}
+      - SESSION_SECRET=${SESSION_SECRET:-}
+      - SERVER_NAME=${SERVER_NAME:-}
+      - CLIENT_NAME=${CLIENT_NAME:-}
+      - CLIENT_ID=${CLIENT_ID:-}
+      - CLIENT_SECRET=${CLIENT_SECRET:-}
+      - CLIENT_ISTRUSTED=${CLIENT_ISTRUSTED:-}
+      - USER_PASS=${USER_PASS:-}
+      - LICENSE=${LICENSE:-}
+      - LICENSE_FILE=${LICENSE_FILE:-}
+      - OTP_OPTION=${OTP_OPTION:-}
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=traefik"
+
+      - "traefik.http.routers.sso-web.entrypoints=http"
+      - "traefik.http.routers.sso-web.rule=Host(`$SERVER_DOMAIN`)"
+
+      - "traefik.http.routers.sso-ssl.entrypoints=https"
+      - "traefik.http.routers.sso-ssl.tls=true"
+      - "traefik.http.routers.sso-ssl.rule=Host(`$SERVER_DOMAIN`)"
+
+      - "traefik.http.services.sso-backend.loadbalancer.server.scheme=http"
+      - "traefik.http.services.sso-backend.loadbalancer.server.port=80"
+    logging:
+        driver: "json-file"
+        options:
+            max-size: "10m"
+
+  # @see https://soulteary.com/2020/02/04/gitea-git-server-with-docker-and-traefik-v2.html
+  gitea:
+    image: gitea/gitea:1.14.6
+    container_name: gitea.lab.io
+    #ports:
+    #  - "0.0.0.0:22:22"
+    environment:
+      - USER_UID=1000
+      - USER_GID=1000
+      - APP_NAME=gitea.lab.io
+      - RUN_MODE=prod
+      - RUN_USER=git
+      - SSH_DOMAIN=gitea.lab.io
+      - SSH_PORT=22
+      - SSH_LISTEN_PORT=22
+      - HTTP_PORT=80
+      - ROOT_URL=https://gitea.lab.io
+      - LFS_START_SERVER=true
+      - REQUIRE_SIGNIN_VIEW=true
+      - DB_TYPE=sqlite3
+      - INSTALL_LOCK=false
+      - DISABLE_GRAVATAR=true
+      - ALLOW_LOCALNETWORKS=true
+    networks:
+      - traefik
+    restart: unless-stopped
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=traefik"
+      # 选择性使用，需要提前定义https-redirect，可以参考之前博客文章
+      # - "traefik.http.routers.gitea-web.middlewares=https-redirect@file"
+      - "traefik.http.routers.gitea-web.entrypoints=http"
+      - "traefik.http.routers.gitea-web.rule=Host(`gitea.lab.io`)"
+      - "traefik.http.routers.gitea-ssl.entrypoints=https"
+      - "traefik.http.routers.gitea-ssl.tls=true"
+      - "traefik.http.routers.gitea-ssl.rule=Host(`gitea.lab.io`)"
+      - "traefik.http.services.gitea-backend.loadbalancer.server.scheme=http"
+      - "traefik.http.services.gitea-backend.loadbalancer.server.port=80"
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
+      - ./demo/data:/data/
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q --spider --proxy off localhost || exit 1"]
+      interval: 5s
+
+networks:
+  traefik:
+    external: true
