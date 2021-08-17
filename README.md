@@ -29,9 +29,7 @@ Open `http://localhost:3000/login`, you will see the login screen.
 
 For user login, default username is `useranme` (without quotes), the password is set by `USER_PASS` variable, the password in the example is `password`.
 
-
-Note: Read the configuration section below or refer to the sample file to learn how to set up your authorization license file. The `username` and `user_email` will be initialized according to the authorization license file by default.
-
+Note: The contents of the `username` and `user_email` fields used by the service will be initialized according to the "license file" by default. You can read the "Configuration File" below and refer to the sample file to understand how to use the authorization file. You can define your `username` and `email address` by self-generating an authorization file, [click here to generate online](https://readers-lic-gift.suyang.wiki/).
 
 ## API && Router
 
