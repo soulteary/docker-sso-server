@@ -27,7 +27,7 @@ docker run -d --name=sso-server \
 
 Open `http://localhost:3000/login`, you will see the login screen.
 
-For user login, default username is `useranme` (without quotes), the password is set by `USER_PASS` variable, the password in the example is `password`.
+For user login, default username is `username` (without quotes), the password is set by `USER_PASS` variable, the password in the example is `password`.
 
 Note: The contents of the `username` and `user_email` fields used by the service will be initialized according to the "license file" by default. You can read the "Configuration File" below and refer to the sample file to understand how to use the authorization file. You can define your `username` and `email address` by self-generating an authorization file, [click here to generate online](https://readers-lic-gift.suyang.wiki/).
 

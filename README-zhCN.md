@@ -25,7 +25,7 @@ docker run -d --name=sso-server \
 
 服务启动之后，使用浏览器访问 `http://localhost:3000/login`，将可以看到登录界面。
 
-默认的账号密码是 `useranme`（不带引号）和 `password`（密码由用户通过 `USER_PASS` 变量设置，示例中的密码是这个）。
+默认的账号密码是 `username`（不带引号）和 `password`（密码由用户通过 `USER_PASS` 变量设置，示例中的密码是这个）。
 
 注意：服务使用的 `username` 和 `user_email` 字段内容，默认将根据“授权许可文件”进行初始化。你可以阅读下文中“配置文件”以及参考示例文件，来了解如何使用授权文件。你可以通过自助生成授权文件来定义你的`用户名`和`邮箱地址`，[点击此处在线生成](https://readers-lic-gift.suyang.wiki/)。
 
