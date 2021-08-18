@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 1.1.2 - 2021.08.18
+
+-[Fixed] The problem that the user variable introduced by 1.1.1 failed to correctly identify the user could not log in correctly.
 ## 1.1.1-2021.08.12
 
 -[New] Added optional CLIENT1 to 5 configuration parameters, allowing different authorization parameters to connect to different applications.
