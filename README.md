@@ -69,8 +69,10 @@ In order to ensure the safety of the program, when the program is started, a uni
 
 **If the value does not match the list below, please do not continue to run the program.**
 
-
 - Version: **soulteary/sso-server:1.1.3**
+  - Fingerprint: `060d0706d05dabd66bbc94b858b481760216f6ae12b36ac19357385c4afe3777`
+  - Docker Image: `51e4fb0b6cc99d6245ac17b7ff23e59a0560696b8dad520dd36e78faf07c5ccb`
+- Version: **soulteary/sso-server:1.1.2**
   - Fingerprint: `060d0706d05dabd66bbc94b858b48176fd0d285ac58416ac052e577b261e5a3d`
   - Docker Image: `e95fa1b6066cf964f9596b8d572db2a0024b1f3029bc34fa03fe721cb5ea30b4`
 - Version: **soulteary/sso-server:1.1.1**
