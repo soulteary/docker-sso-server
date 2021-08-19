@@ -1,8 +1,16 @@
 # CHANGELOG
 
+## 1.1.3 - 2021.08.20
+
+-[New] Added Traefik Forward Auth dedicated API address `/api/traefik/auth`, the previous API `/api/traefik-auth-user` will be obsolete in the future.
+-[New] Three fields, `id`, `email`, and `nickname`, are added to the general user information API to facilitate connection with external applications.
+-[Adjustment] The OTP KEY persistence parameters are adjusted with numerical values. The user can directly display the OTP Secret that can be used, so that the user can use it by adding it manually at certain times.
+-[Adjustment] Set the QR code used by OTP for the first time to adjust. By default, it will carry the current server name, which is convenient for users to distinguish on the OTP tool.
+
 ## 1.1.2 - 2021.08.18
 
 -[Fixed] The problem that the user variable introduced by 1.1.1 failed to correctly identify the user could not log in correctly.
+
 ## 1.1.1-2021.08.12
 
 -[New] Added optional CLIENT1 to 5 configuration parameters, allowing different authorization parameters to connect to different applications.

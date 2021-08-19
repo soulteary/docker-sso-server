@@ -22,7 +22,7 @@ docker run -d --name=sso-server \
             -e CLIENT_ID="YOUR_OAUTH_CLIENT_ID" \
             -e CLIENT_SECRET="YOUR_OAUTH_CLIENT_SECRET" \
             -e USER_PASS="password" \
-            -p 3000:80 soulteary/sso-server:1.1.2
+            -p 3000:80 soulteary/sso-server:1.1.3
 ```
 
 Open `http://localhost:3000/login`, you will see the login screen.
@@ -70,7 +70,7 @@ In order to ensure the safety of the program, when the program is started, a uni
 **If the value does not match the list below, please do not continue to run the program.**
 
 
-- Version: **soulteary/sso-server:1.1.2**
+- Version: **soulteary/sso-server:1.1.3**
   - Fingerprint: `060d0706d05dabd66bbc94b858b48176fd0d285ac58416ac052e577b261e5a3d`
   - Docker Image: `e95fa1b6066cf964f9596b8d572db2a0024b1f3029bc34fa03fe721cb5ea30b4`
 - Version: **soulteary/sso-server:1.1.1**
@@ -105,9 +105,9 @@ In order to ensure that the program can run correctly, we need to define some va
 | **CLIENT_SECRET** | NO | `YOUR_CLIENT_SECRET` | `t3Qt89nv9u5O` | Client Secret used for OAuth2 authorization |
 | CLIENT_ISTRUSTED | YES | `true` | `false` | If it is true, the user information can be used without the user's explicit authorization. |
 | CLIENT_NAME | YES | `My CLIENT NAME` | `GENERAL SSO SERVER` | Only used for page or command line information display. If not set, will try to use the `SERVER_NAME` variable. |
-| SERVER_NAME | Yes | `My SSO Server` | `SSO Server` | Only used for page or command line information display |
+| SERVER_NAME | Yes | `My SSO Server` | `SSO Server` | Only used for OTP tool, Web page or command line information display |
 | PORT | Yes | `8080` | `80` | Program listening port in the docker |
-| OTP_OPTION | Yes | `KEY:m9sEH4JP6C;PERIOD:30` | empty | The OTP parameters specified by the user can be obtained on the user page after the first binding |
+| OTP_OPTION | Yes | `KEY:MIZUSR2ZJZTWUSDY;PERIOD:30` | empty | The OTP parameters specified by the user can be obtained on the user page after the first binding |
 | SESSION_SECRET | Yes | `iWoupoFYZ9Ud` | `RANDOM STRING()` | Only used for page or command line information display |
 | SERVER_DOMAIN | Yes | `sso.example.com` | empty | Only required in Traefik docker-compose.yml file |
 | LICENSE | Yes | `...(huge text)` | `PRESET_LICENSE_TEXT` | The content of the user license agreement, and `LICENSE_FILE` can choose one to use |
