@@ -3,7 +3,7 @@ version: "3.6"
 services:
 
   self-hosted-sso-server:
-    image: soulteary/sso-server:1.1.3
+    image: soulteary/sso-server:1.1.4
     container_name: sso-server
     restart: always
     expose:

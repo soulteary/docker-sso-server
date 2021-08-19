@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.1.4-2021.08.20
+
+-[New] Improve the default user experience, distinguish the two states of system login and authorized login. By default, users are not forced to check user information for the first login, and judge whether the requested address needs to be automatically returned according to the user's login status.
+
 ## 1.1.3 - 2021.08.20
 
 -[New] Added Traefik Forward Auth dedicated API address `/api/traefik/auth`, the previous API `/api/traefik-auth-user` will be obsolete in the future.

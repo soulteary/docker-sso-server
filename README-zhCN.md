@@ -20,7 +20,7 @@ docker run -d --name=sso-server \
             -e CLIENT_ID="YOUR_OAUTH_CLIENT_ID" \
             -e CLIENT_SECRET="YOUR_OAUTH_CLIENT_SECRET" \
             -e USER_PASS="password" \
-            -p 3000:80 soulteary/sso-server:1.1.3
+            -p 3000:80 soulteary/sso-server:1.1.4
 ```
 
 服务启动之后，使用浏览器访问 `http://localhost:3000/login`，将可以看到登录界面。
@@ -68,23 +68,11 @@ profileUrl         = 'http://host-name-or-ip/api/userinfo'
 
 **如果数值与下表不符，请不要继续运行程序。**
 
+- 版本: **soulteary/sso-server:1.1.4**
+  - 指纹: `060d0706d05dabd66bbc94b858b481765d6210607869314b7778c67cddd2ba91`
+  - Docker Image: `38256b86d89fb9fb9cd6612da72a5de2e703a52c3087bef448927ffb36a58392`
 
-- 版本: **soulteary/sso-server:1.1.3**
-  - 指纹: `060d0706d05dabd66bbc94b858b481760216f6ae12b36ac19357385c4afe3777`
-  - Docker Image: `51e4fb0b6cc99d6245ac17b7ff23e59a0560696b8dad520dd36e78faf07c5ccb`
-- 版本: **soulteary/sso-server:1.1.2**
-  - 指纹: `060d0706d05dabd66bbc94b858b48176fd0d285ac58416ac052e577b261e5a3d`
-  - Docker Image: `e95fa1b6066cf964f9596b8d572db2a0024b1f3029bc34fa03fe721cb5ea30b4`
-- 版本: **soulteary/sso-server:1.1.1**
-  - 指纹: `060d0706d05dabd66bbc94b858b481765a08d4b79ffbc7d939a96db4f6a46d6b`
-    - Docker Image: `7c7fa08a707acc6999d1e25cf14d3dd00d397f747e8a9dcb22868707f849f7e4`
-- 版本: **soulteary/sso-server:1.1.0**
-  - 指纹: `060d0706d05dabd66bbc94b858b4817651fc771139b3323018d9c1eeb1d9794c`
-  - Docker Image: `f093c6ab5e825767957c60dfc8f580c7e267e1b7c365062e58fb15a726442c6d`
-- 版本: **soulteary/sso-server:1.0.0**
-  - 指纹: `060d0706d05dabd66bbc94b858b48176079287862e8111f46ee08a00e80a130d`
-  - Docker Image: `979fa1fc30364647e366c0d0448c38924ad7776a057fd8623ee87e5868941565`
-
+查看所有[历史版本](./CHECKSUM.md)的指纹。
 ## 当前支持登录模式
 
 - OAuth2
