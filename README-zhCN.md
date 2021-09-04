@@ -52,7 +52,7 @@ docker run -d --name=sso-server \
   3. OAuth 用户信息: `/api/userinfo`,
   4. OAuth 客户端信息: `/api/clientinfo`,
   5. Traefik Forward Auth: `/api/traefik-auth-user`
-  6. Outline User Auth (依旧在调整): `Function is ready, wait for scheme stability`
+  6. Outline 用户信息: `/api/outline/oidc`
 
 一般情况下，你不需要知道如何使用它们，你只需要知道如何将它们填入需要使用认证的程序配置里就行了，像是这样：
 

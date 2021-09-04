@@ -53,7 +53,7 @@ Currently the program supports five commonly used APIs:
   3. OAuth User Info: `/api/userinfo`,
   4. OAuth Client Info: `/api/clientinfo`,
   5. Traefik Forward Auth: `/api/traefik-auth-user`
-  6. Outline User Auth (TBD): `Function is ready, wait for scheme stability`
+  6. Outline user information: `/api/outline/oidc`
 
 Under normal circumstances, you don’t need to know how to use them, you just need to fill in them in the system you need to authenticate, like this:
 
