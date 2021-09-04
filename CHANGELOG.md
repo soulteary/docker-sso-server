@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.1.5-2021.09.04
+
+- [New] Open the Outline API and support the Outline Self-Hosted.
+
 ## 1.1.4-2021.08.20
 
 -[New] Improve the default user experience, distinguish the two states of system login and authorized login. By default, users are not forced to check user information for the first login, and judge whether the requested address needs to be automatically returned according to the user's login status.
