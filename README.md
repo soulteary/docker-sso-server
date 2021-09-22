@@ -68,9 +68,9 @@ profileUrl         = 'http://host-name-or-ip/api/userinfo'
 
 **如果数值与下表不符，请不要继续运行程序。**
 
-- 版本: **soulteary/sso-server:1.1.5**
-  - 指纹: `060d0706d05dabd66bbc94b858b481763150ef669078dfa92e9e0c76b1758bf8`
-  - Docker Image: `2cf9ba5e79fb47cbd768381e4ba7e34a1d446a5495bf4c5e32d283ee00360738`
+- 版本: **soulteary/sso-server:1.1.6**
+  - 指纹: `060d0706d05dabd66bbc94b858b481763c310cfb3702ffce0a87c3f857b26327`
+  - 镜像: `dbf19912a279dd02c2c18a152ce5b61bd088845f194f693baa924a10eddb96e6`
 
 查看所有[历史版本](./CHECKSUM.md)的指纹。
 ## 当前支持登录模式

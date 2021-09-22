@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 1.1.6-2021.09.22
+
+- [Improvement] Support graceful exit and improve the efficiency of program redeployment.
+
 ## 1.1.5-2021.09.04
 
 - [New] Open the Outline API and support the Outline Self-Hosted.
